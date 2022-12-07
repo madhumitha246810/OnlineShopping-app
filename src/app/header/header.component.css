@@ -1,0 +1,73 @@
+.head{
+    display: flex;
+    /* justify-content: center; */
+    background-color:blueviolet;
+    height: 15%;
+   
+    /* padding: 10px; */
+}
+
+h1{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    /* margin-top: 20px; */
+    /* margin-left: 10px; */
+    
+}
+img{
+    width: 107px;
+    height: 107px;
+    padding: 10px;
+}
+
+#btn{
+    border-radius: 5px ;
+    margin-left: 70px;
+    background-color: rgb(222, 239, 233);
+    
+}
+/* .example-sidenav-content{
+   text-align: start;
+} */
+#circle{
+    background-color: chartreuse;
+    border-radius: 50%;
+    font-size:20px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    margin-left: 300px;
+    margin-top: 20px;
+    float: left;
+  
+    
+}
+.example-card {
+    background-color: khaki;
+    padding: 10px;
+  }
+ .mat-nav-list :hover{
+    color: deeppink;
+ }
+
+.sbtn{
+    margin-top: 10px;
+    height: 80%;
+    margin-left: 80px;
+    border-radius: 25px;
+    
+  
+}
+.s_btn{
+    height: 30px;
+}
+
+.sidenav{
+    height: 100%;
+}
+.bar{
+    border: none;
+    /* height: 30px;
+    margin-top:100px; */
+}

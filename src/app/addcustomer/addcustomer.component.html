@@ -1,0 +1,36 @@
+<div>
+    <form [formGroup]="itemdetail" (ngSubmit)="submit(itemdetail.value)" appearance="fill">
+    <mat-form-field>
+        <label for="position">Position</label><br>
+        <input matInput type="text" formControlName="position" name="position">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon><br>
+
+    </mat-form-field><br>
+
+    <mat-form-field>
+        <label for="itemname">Itemname</label><br>
+        <input matInput name="itemname" formControlName="itemname" type="text"><br>
+    </mat-form-field><br>
+
+
+
+    <mat-form-field>
+        <label for="cost">Cost</label><br>
+        <input matInput name="cost" formControlName="cost" type="text"><br>
+    </mat-form-field><br>
+
+
+
+    <mat-form-field>
+        <label for="shippingAddress">ShippingAddress</label><br>
+        <input matInput name="shippingAddress" formControlName="shippingAddress" type="text"><br><br>
+    </mat-form-field><br>
+
+
+
+
+    <button  mat-stroked-button *ngIf="!data?.showeditbutton" type="submit" (click)="msg1()">submit</button>
+    <button mat-stroked-button *ngIf="data?.showeditbutton" (click)="update(itemdetail.value)" (click)="msg2()">update</button>
+</form>
+
+</div>
