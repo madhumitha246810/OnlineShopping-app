@@ -19,8 +19,6 @@ export class AddcustomerComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('--data--', this.data)
-
     this.itemdetail = new FormGroup({
       position: new FormControl(this.data?.position ?? '', Validators.required,),
       itemname: new FormControl(this.data?.itemname ?? '', Validators.required),
@@ -34,10 +32,8 @@ export class AddcustomerComponent implements OnInit {
     this.serv.CreateCustomer(
       { ...data, id: data['position'] }).subscribe(d => {
         // window.location.reload();
-        console.log('----', d);
       })
     this.dialog.closeAll();
-    console.log('...', data)
   }
   update(deti: any) {
 
