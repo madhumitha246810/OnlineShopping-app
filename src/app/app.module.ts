@@ -32,6 +32,7 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import {MatListModule} from '@angular/material/list';
 import { StyleDirective } from './style.directive';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -73,7 +74,8 @@ import { StyleDirective } from './style.directive';
     MatStepperModule,
     MatSelectModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule
     
   ],
   providers: [Gaurd],
