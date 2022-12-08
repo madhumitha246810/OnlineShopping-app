@@ -30,30 +30,22 @@ localhost: any;
   ngOnInit(){
     this.a =localStorage.getItem('email')
     this.name=this.a.split('.').join(' ').split('@',1).join(' ')
-    // console.log(this.name)
     this.f=((this.name.split(' ',1))[0])[0]  
     this.l=((this.name.split(' ',2))[1])[0]
-    // console.log(this.f[0])
-    // console.log(this.l[0]);
-    
   }
   addCustomer(){
     const dialogRef = this.dialog.open(StepperComponent);
-    dialogRef.afterClosed().subscribe(t=>{
+    dialogRef.afterClosed().subscribe(details=>{
       window.location.reload();
-      console.log('output',`${t}`)})
+      })
   }
- 
   out(){
     // this.router.navigate(['/login'])
-
     localStorage.clear()
     
   }
-onSearch(value:any){
-  console.log(' ............. ---', value);
+  onSearch(value:any){
   this.serv.searchItem(value)
-  
 }
 
 

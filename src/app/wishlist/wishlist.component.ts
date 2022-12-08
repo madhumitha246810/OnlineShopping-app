@@ -11,67 +11,57 @@ import { SampleserviceService } from '../sampleservice.service';
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.css']
 })
-export class WishlistComponent implements OnInit{
-displayedColumns: string[] = ['position', 'itemname', 'cost', 'shippingAddress'];
-dataSource: Observable<any> = of([{}]);
+export class WishlistComponent implements OnInit {
+  displayedColumns: string[] = ['position', 'itemname', 'cost', 'shippingAddress'];
+  dataSource: Observable<any> = of([{}]);
   dialog: any;
 
 
-constructor(private serv:SampleserviceService,private router:Router){}
+  constructor(private serv: SampleserviceService, private router: Router) { }
 
-ngOnInit() {
-  this.serv.getCustomer()
-this.dataSource=this.serv.dataEvent$.pipe(map((n:any)=>{
-  // console.log("..................", n)
-  return n.filter((x:any)=>x.Wish)
-  
-}))
+  ngOnInit() {
+    this.serv.getCustomer()
+    this.dataSource = this.serv.dataEvent$.pipe(map((n: any) => {
+      return n.filter((x: any) => x.Wish)
 
-
-
-  
-}
-edit(element:any) {
-  const dialogRef = this.dialog.open(AddcustomerComponent,
-    {
-      data:{
-        ...element,
-        showeditbutton:true
-      }
-    });
-  dialogRef.afterClosed().subscribe((t: any) => { console.log('output', `${t}`) })
-}
-
-deleteRow(id: any) {
-  this.serv.deleteCustomer(id).subscribe(f => {
-    
-    window.location.reload(); console.log('...', f)
-  })
-}
-
-   
- 
-    
+    }))
   }
- 
-    
-  
-  
-
-
-
-// this.service.getUsers().pipe(map((val:any)=>val.data),).subscribe(data=>{
-//   console.log('data',data)
-//   this.dataSource = data;
-//  })
-
-
-
-
-
-
+  edit(element: any) {
+    const dialogRef = this.dialog.open(AddcustomerComponent,
+      {
+        data: {
+          ...element,
+          showeditbutton: true
+        }
+      });
+    dialogRef.afterClosed().subscribe((details: any) => { })
+  }
+  deleteRow(id: any) {
+    this.serv.deleteCustomer(id).subscribe(details => {
+      window.location.reload();
+    })
+  }
 
 
 
 
-// }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

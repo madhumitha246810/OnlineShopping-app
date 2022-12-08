@@ -16,31 +16,18 @@ userdetail:any
   d: any;
 constructor(private router: Router, private _snackBar: MatSnackBar, private service:SampleserviceService){}
   ngOnInit(){
-
-  this.userdetail= new FormGroup({
-    email:new FormControl('', Validators.required),
-    password:new FormControl('', Validators.required )
-    
-  })
-  
- 
-}
-home(){
-    this.router.navigate(['/dashboard'])
+    this.userdetail= new FormGroup({
+      email:new FormControl('', Validators.required),
+      password:new FormControl('', Validators.required )
+    })
   }
   openSnackBar() {
     this._snackBar.open('Successful')
   }
   submit(data:any){
-    //console.log('..', data)
     this.service.login(data).subscribe((d:any)=>{
       localStorage.setItem('loginSuccessfully','true')
       localStorage.setItem('email',data.email)
-      // localStorage.getItem(data.email)
-     
-      
-      
       this.router.navigate(['/dashboard'])})
-      
   }
 }
