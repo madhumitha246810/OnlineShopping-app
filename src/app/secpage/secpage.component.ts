@@ -16,9 +16,9 @@ export class SecpageComponent {
   
   constructor(private serv:SampleserviceService,private router:Router, private route:ActivatedRoute, private dialog: MatDialog,){}
   ngOnInit(){
-    //console.log("---details---",this.route.snapshot.params['id'])
+    
     this.serv.getRowDetails(this.route.snapshot.params['id']).subscribe((d: any) => {
-      console.log('!!!!!!!!!',d)
+      
       this.value=d
     })
 }
@@ -30,29 +30,14 @@ edit(value:any) {
         showeditbutton:true
       }
     });
-  dialogRef.afterClosed().subscribe((t: any) => { console.log('output', `${t}`) })
+  dialogRef.afterClosed().subscribe((details: any) => {  })
 }
-
 deleteRow(id: any) {
-  this.serv.deleteCustomer(id).subscribe(f => {
+  this.serv.deleteCustomer(id).subscribe(details => {
     this.router.navigate(['/dashboard'])
-    window.location.reload(); console.log('...', f)
+    window.location.reload(); 
   })
 }  
 
-out(){
-  this.router.navigate(['/login'])
-  localStorage.clear()
-}
-home(){
-  this.router.navigate(['/dashboard'])
-}
-shop(){
-this.router.navigate(['/shopping'])
-}
-
-wish(){
-this.router.navigate(['/wishlist'])
-}
   
 }
